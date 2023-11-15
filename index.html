@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container
+    {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        width: 40%;
+        background-color: gray;
+        margin: auto;
+        margin-top: 300px;
+        font-size: 30px; 
+    font-weight: bold;
+    }
+</style>
+
+<body>
+    <section class="container">
+        <div class="first">First</div>
+
+        <div class="second">Second</div>
+        
+        <div class="third">Third</div>
+
+
+        <p style="color: burlywood;" id="firstno" data-target="1500">0</p>
+
+        <p style="color: burlywood;" id="secondno" data-target="1000">0</p>
+
+        <p style="color: burlywood;" id="thirdno" data-target="500">0</p>
+</section>
+
+
+
+</body>
+<script>
+    let firstOne = document.getElementById('firstno').getAttribute('data-target');
+    let secondOne = document.getElementById('secondno').getAttribute('data-target');
+    let thirdOne = document.getElementById('thirdno').getAttribute('data-target');
+
+    let one = 0;
+    let two = 0;
+    let three =0;
+    function change() {
+        if (one < firstOne)
+         {
+            one += 100;
+            document.getElementById('firstno').innerHTML = one;
+         }
+         if(two<secondOne)
+         {
+            two += 100;
+            document.getElementById('secondno').innerHTML = two;
+
+         }
+         if(three<thirdOne)
+         {
+            three += 100;
+            document.getElementById('thirdno').innerHTML = three;
+         }
+        
+        else
+        {
+            document.getElementById('firstno').innerHTML = one;
+            document.getElementById('secondno').innerHTML = two;
+            document.getElementById('thirdno').innerHTML = three;
+        }
+    }
+    setInterval(change, 100);
+</script>
+
+</html>
